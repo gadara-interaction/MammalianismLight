@@ -1,7 +1,7 @@
 # MammalianismLight
 
-###ライブラリ
+### ライブラリ
 - librariesを参照
 
-###Code
+### Code
 - Light.h, Light.cppはLED制御用
