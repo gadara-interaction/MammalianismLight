@@ -30,13 +30,13 @@ Stepper stepperV(number_of_steps_lr, 4, 6, 5, 7);//縦方向制御に使用す�
 Stepper stepperH(number_of_steps, 8, 10, 9, 11);//横方向制御に使用するPIN(8-11)を指定
 
 //--- パラメーター調整するところ
-float left_right_para = 0.08; //0.03~0.08ぐらいの間で調整すると良い
-float up_down_para = 0.2; //0.1~0.5ぐらいの間で調整すると良い。基本いじらなくて大丈夫だと思う
+float left_right_para = 0.05; //0.03~0.08ぐらいの間で調整すると良い
+float up_down_para = 0.3; //0.1~0.5ぐらいの間で調整すると良い。基本いじらなくて大丈夫だと思う
 
 int default_pos = 850; //サーボーのデフォルト位置 800~850ぐらいの間で調整すると良い
-int nod_pos = 800; //本をかざしたときのサーボーの位置
+int nod_pos = 790; //本をかざしたときのサーボーの位置
 
-int distance = 65; //超音波センサが反応する距離cm
+int distance = 45; //超音波センサが反応する距離cm
 
 //----
 
@@ -60,7 +60,7 @@ void loop() {
     int dist_inch = range_pw / 147; // 147us per inch
     unsigned int dist_cm = ((unsigned int)(dist_inch) * (unsigned int)(2.54 * 64)) >> 6;
     Serial.println(dist_cm); 
-    
+        
     if(dist_cm <= distance){
       //本があるとき
       nod();
@@ -83,6 +83,7 @@ void move_mammal(){
       swingVertical();
     }else {
       //縦の動き
+//      blinkLight();
       swingHorizontal();
     }
 }
@@ -133,7 +134,7 @@ void swingHorizontal(){
 //本をかざしたとき
 void nod(){
   //(ID,位置,スピード) 基本IDは固定
-  Dynamixel.moveSpeed(1,nod_pos,20);
+  Dynamixel.moveSpeed(1,nod_pos,25);
 }
 
 void defaultPostion(){

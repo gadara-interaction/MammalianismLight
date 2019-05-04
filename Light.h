@@ -1,2 +1,3 @@
 void initLight();
 
+void blinkLight();
