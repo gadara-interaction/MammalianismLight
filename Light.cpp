@@ -14,11 +14,11 @@ int blink_count = 0;
 
 void initLight(){
   pixel.begin();
-  pixel.setPixelColor(0, pixel.Color(255,168,97)); //一番最初のLEDは０番です
-  pixel.setPixelColor(1, pixel.Color(255,168,97)); //一番最初のLEDは０番です
-  pixel.setPixelColor(2, pixel.Color(255,168,97)); //一番最初のLEDは０番です
-  pixel.setPixelColor(3, pixel.Color(255,168,97)); //一番最初のLEDは０番です
-  pixel.setPixelColor(4, pixel.Color(255,168,97));
+  pixel.setPixelColor(0, pixel.Color(255,190,60)); //一番最初のLEDは０番です
+  pixel.setPixelColor(1, pixel.Color(255,190,60)); //一番最初のLEDは０番です
+  pixel.setPixelColor(2, pixel.Color(255,190,60)); //一番最初のLEDは０番です
+  pixel.setPixelColor(3, pixel.Color(255,190,60)); //一番最初のLEDは０番です
+  pixel.setPixelColor(4, pixel.Color(255,190,60));
   pixel.setBrightness(255);
   pixel.show();
 }
