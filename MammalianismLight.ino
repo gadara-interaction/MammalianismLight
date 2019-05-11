@@ -50,7 +50,7 @@ void setup() {
   stepperH.setSpeed(1000);//１分間の回転数
   Dynamixel.begin(1000000, 2); // Inicialize the servo at 1Mbps and Pin Control 2
   delay(300);
-  calibration();
+//  calibration();
 
   delay(2000);
 }
